@@ -1,29 +1,43 @@
 {
-    "name": "divineomega/php-postcodes",
-    "type": "library",
-    "description": "This library handles various UK postcode related tasks such as address lookup by postcode, postcode validation, generation of valid UK postcodes and getting a postcode's outward and inward codes.",
-    "keywords": ["postcodes", "PHP", "PHP library", "PHP postcodes library", "PHP postcodes"],
-    "homepage": "https://github.com/divineomega/php-postcodes",
-    "license": "LGPL-3.0-only",
-    "require": {
-        "php": "^7.1||^8.0",
-        "guzzlehttp/guzzle": "^6.0||^7.0",
-        "fakerphp/faker": "^1.9.1",
-        "ext-json": "*"
-    },
-    "require-dev": {
-        "phpunit/phpunit": "^7.0 || ^8.0",
-        "fzaninotto/faker": "^1.6",
-        "php-coveralls/php-coveralls": "^2.0"
-    },
-    "autoload": {
-        "psr-4": {
-            "DivineOmega\\Postcodes\\": "src/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "DivineOmega\\Postcodes\\Tests\\": "tests/Unit/"
-        }
+  "name": "jord-jd/php-postcodes",
+  "type": "library",
+  "description": "This library handles various UK postcode related tasks such as address lookup by postcode, postcode validation, generation of valid UK postcodes and getting a postcode's outward and inward codes.",
+  "keywords": [
+    "postcodes",
+    "PHP",
+    "PHP library",
+    "PHP postcodes library",
+    "PHP postcodes"
+  ],
+  "homepage": "https://github.com/divineomega/php-postcodes",
+  "license": "LGPL-3.0-only",
+  "require": {
+    "php": "^7.1||^8.0",
+    "guzzlehttp/guzzle": "^6.0||^7.0",
+    "fakerphp/faker": "^1.9.1",
+    "ext-json": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^7.0 || ^8.0",
+    "fzaninotto/faker": "^1.6",
+    "php-coveralls/php-coveralls": "^2.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "DivineOmega\\Postcodes\\": "src/"
     }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "DivineOmega\\Postcodes\\Tests\\": "tests/Unit/"
+    }
+  },
+  "replace": {
+    "divineomega/php-postcodes": "self.version"
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "5.0-dev"
+    }
+  }
 }

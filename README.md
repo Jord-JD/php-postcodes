@@ -1,9 +1,9 @@
 # PHP Postcodes
 
-[![Build Status](https://travis-ci.com/DivineOmega/php-postcodes.svg?branch=master)](https://travis-ci.com/DivineOmega/php-postcodes)
-[![Coverage Status](https://coveralls.io/repos/github/DivineOmega/php-postcodes/badge.svg?branch=master)](https://coveralls.io/github/DivineOmega/php-postcodes?branch=master)
+[![Build Status](https://travis-ci.com/Jord-JD/php-postcodes.svg?branch=master)](https://travis-ci.com/Jord-JD/php-postcodes)
+[![Coverage Status](https://coveralls.io/repos/github/Jord-JD/php-postcodes/badge.svg?branch=master)](https://coveralls.io/github/Jord-JD/php-postcodes?branch=master)
 [![StyleCI](https://github.styleci.io/repos/167990924/shield?branch=master)](https://github.styleci.io/repos/167990924)
-[![Packagist](https://img.shields.io/packagist/dt/divineomega/php-postcodes.svg)](https://packagist.org/packages/divineomega/php-postcodes/stats)
+[![Packagist](https://img.shields.io/packagist/dt/jord-jd/php-postcodes.svg)](https://packagist.org/packages/jord-jd/php-postcodes/stats)
 
 This library handles various UK postcode related tasks.
 
@@ -18,7 +18,7 @@ This library handles various UK postcode related tasks.
 
 To install, just run the following composer command.
 
-`composer require divineomega/php-postcodes`
+`composer require jord-jd/php-postcodes`
 
 ## Setup
 
