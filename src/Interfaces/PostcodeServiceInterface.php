@@ -1,6 +1,6 @@
 <?php
 
-namespace DivineOmega\Postcodes\Interfaces;
+namespace JordJD\Postcodes\Interfaces;
 
 interface PostcodeServiceInterface
 {

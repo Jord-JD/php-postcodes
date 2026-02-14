@@ -1,6 +1,6 @@
 <?php
 
-namespace DivineOmega\Postcodes\Exceptions;
+namespace JordJD\Postcodes\Exceptions;
 
 class InvalidPostcodeException extends \Exception
 {

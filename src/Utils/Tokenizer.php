@@ -1,8 +1,8 @@
 <?php
 
-namespace DivineOmega\Postcodes\Utils;
+namespace JordJD\Postcodes\Utils;
 
-use DivineOmega\Postcodes\Exceptions\InvalidPostcodeException;
+use JordJD\Postcodes\Exceptions\InvalidPostcodeException;
 
 abstract class Tokenizer
 {

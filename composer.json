@@ -9,7 +9,7 @@
     "PHP postcodes library",
     "PHP postcodes"
   ],
-  "homepage": "https://github.com/divineomega/php-postcodes",
+  "homepage": "https://github.com/Jord-JD/php-postcodes",
   "license": "LGPL-3.0-only",
   "require": {
     "php": "^7.1||^8.0",
@@ -22,12 +22,12 @@
   },
   "autoload": {
     "psr-4": {
-      "DivineOmega\\Postcodes\\": "src/"
+      "JordJD\\Postcodes\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "DivineOmega\\Postcodes\\Tests\\": "tests/Unit/"
+      "JordJD\\Postcodes\\Tests\\": "tests/Unit/"
     }
   },
   "replace": {

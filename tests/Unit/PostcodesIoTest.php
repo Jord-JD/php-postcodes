@@ -1,8 +1,8 @@
 <?php
 
-namespace DivineOmega\Postcodes\Tests;
+namespace JordJD\Postcodes\Tests;
 
-use DivineOmega\Postcodes\Objects\PostcodesIo;
+use JordJD\Postcodes\Objects\PostcodesIo;
 use PHPUnit\Framework\TestCase;
 
 final class PostcodesIoTest extends TestCase

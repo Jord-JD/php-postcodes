@@ -1,10 +1,10 @@
 <?php
 
 require_once 'vendor/autoload.php';
-use DivineOmega\Postcodes\Objects\IdealPostcodes;
-use DivineOmega\Postcodes\Objects\PostcodeAnywhere;
-use DivineOmega\Postcodes\Utils\Generator;
-use DivineOmega\Postcodes\Utils\Validator;
+use JordJD\Postcodes\Objects\IdealPostcodes;
+use JordJD\Postcodes\Objects\PostcodeAnywhere;
+use JordJD\Postcodes\Utils\Generator;
+use JordJD\Postcodes\Utils\Validator;
 
 $postcode = Generator::generatePostcode();
 

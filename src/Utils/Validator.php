@@ -1,6 +1,6 @@
 <?php
 
-namespace DivineOmega\Postcodes\Utils;
+namespace JordJD\Postcodes\Utils;
 
 abstract class Validator
 {

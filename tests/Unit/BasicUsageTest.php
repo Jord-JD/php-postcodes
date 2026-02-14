@@ -1,11 +1,11 @@
 <?php
 
-namespace DivineOmega\Postcodes\Tests;
+namespace JordJD\Postcodes\Tests;
 
-use DivineOmega\Postcodes\Exceptions\InvalidPostcodeException;
-use DivineOmega\Postcodes\Utils\Generator;
-use DivineOmega\Postcodes\Utils\Tokenizer;
-use DivineOmega\Postcodes\Utils\Validator;
+use JordJD\Postcodes\Exceptions\InvalidPostcodeException;
+use JordJD\Postcodes\Utils\Generator;
+use JordJD\Postcodes\Utils\Tokenizer;
+use JordJD\Postcodes\Utils\Validator;
 use PHPUnit\Framework\TestCase;
 
 final class BasicUsageTest extends TestCase

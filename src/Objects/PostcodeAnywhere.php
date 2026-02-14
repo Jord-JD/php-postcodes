@@ -1,8 +1,8 @@
 <?php
 
-namespace DivineOmega\Postcodes\Objects;
+namespace JordJD\Postcodes\Objects;
 
-use DivineOmega\Postcodes\Interfaces\PostcodeServiceInterface;
+use JordJD\Postcodes\Interfaces\PostcodeServiceInterface;
 use Exception;
 use SoapClient;
 

@@ -36,11 +36,11 @@ Sign up at the respective website if you need to use these features.
 You can then use the following code to get an appropriate postcode lookup service object.
 
 ```php
-$postcodeLookupService = new \DivineOmega\Postcodes\Objects\IdealPostcodes('API_KEY');
+$postcodeLookupService = new \JordJD\Postcodes\Objects\IdealPostcodes('API_KEY');
 // OR
-$postcodeLookupService = new \DivineOmega\Postcodes\Objects\PostcodeAnywhere('API_KEY');
+$postcodeLookupService = new \JordJD\Postcodes\Objects\PostcodeAnywhere('API_KEY');
 // OR
-$postcodeLookupService = new \DivineOmega\Postcodes\Objects\PostcodesIo();
+$postcodeLookupService = new \JordJD\Postcodes\Objects\PostcodesIo();
 ```
 
 ## Usage
@@ -60,7 +60,7 @@ You can validate a UK postcode is correct using the `Validator` utility class. A
 how to do so is shown below.
 
 ```php
-$validated = \DivineOmega\Postcodes\Utils\Validator::validatePostcode('ST163DP');
+$validated = \JordJD\Postcodes\Utils\Validator::validatePostcode('ST163DP');
 ```
 
 Please note that the postcode validation is case insensitive.
@@ -71,7 +71,7 @@ This library allows you generate a random, valid UK postcode. This makes use of 
 `Generator` utility class, as shown below.
 
 ```php
-$postcode = \DivineOmega\Postcodes\Utils\Generator::generatePostcode();
+$postcode = \JordJD\Postcodes\Utils\Generator::generatePostcode();
 ```
 
 ### Get outward and inward codes
@@ -79,6 +79,6 @@ $postcode = \DivineOmega\Postcodes\Utils\Generator::generatePostcode();
 > The first part of the Postcode eg PO1 is called the outward code as it identifies the town or district to which the letter is to be sent for further sorting. The second part of the postcode eg 1EB is called the inward code.
 
 ```php
-$outwardCode = \DivineOmega\Postcodes\Utils\Tokenizer::outward('ST163DP'); // Returns ST16
-$inwardCode = \DivineOmega\Postcodes\Utils\Tokenizer::inward('ST163DP'); // Returns 3DP
+$outwardCode = \JordJD\Postcodes\Utils\Tokenizer::outward('ST163DP'); // Returns ST16
+$inwardCode = \JordJD\Postcodes\Utils\Tokenizer::inward('ST163DP'); // Returns 3DP
 ```

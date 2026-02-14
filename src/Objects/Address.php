@@ -1,6 +1,6 @@
 <?php
 
-namespace DivineOmega\Postcodes\Objects;
+namespace JordJD\Postcodes\Objects;
 
 class Address
 {
