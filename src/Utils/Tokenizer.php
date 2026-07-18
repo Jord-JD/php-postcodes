@@ -10,14 +10,14 @@ abstract class Tokenizer
     {
         self::sanityCheck($postcode);
 
-        return strtoupper(trim(substr($postcode, 0, -3)));
+        return substr(Validator::normalizePostcode($postcode), 0, -4);
     }
 
     public static function inward($postcode)
     {
         self::sanityCheck($postcode);
 
-        return strtoupper(trim(substr($postcode, -3, 3)));
+        return substr(Validator::normalizePostcode($postcode), -3);
     }
 
     private static function sanityCheck($postcode)
