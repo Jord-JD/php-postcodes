@@ -1,7 +1,6 @@
 # PHP Postcodes
 
-[![Build Status](https://travis-ci.com/Jord-JD/php-postcodes.svg?branch=master)](https://travis-ci.com/Jord-JD/php-postcodes)
-[![Coverage Status](https://coveralls.io/repos/github/Jord-JD/php-postcodes/badge.svg?branch=master)](https://coveralls.io/github/Jord-JD/php-postcodes?branch=master)
+[![Tests](https://github.com/Jord-JD/php-postcodes/actions/workflows/tests.yml/badge.svg)](https://github.com/Jord-JD/php-postcodes/actions/workflows/tests.yml)
 [![Packagist](https://img.shields.io/packagist/dt/jord-jd/php-postcodes.svg)](https://packagist.org/packages/jord-jd/php-postcodes/stats)
 
 This library handles various UK postcode related tasks.
@@ -26,9 +25,9 @@ To install, just run the following composer command.
 Using some of the data retrieval features provided by this library requires a postcode lookup service.
 It currently supports the following postcode lookup services.
 
-* Ideal Postcodes - https://ideal-postcodes.co.uk
-* Postcode Anywhere (PCA Predict) - https://www.pcapredict.com/
-* Postcodes.io - http://postcodes.io/
+* [Ideal Postcodes](https://ideal-postcodes.co.uk)
+* [Loqate](https://www.loqate.com/) (the provider formerly known as Postcode Anywhere/PCA Predict)
+* [Postcodes.io](https://postcodes.io/)
 
 Ideal Postcodes and Postcode Anywhere can return individual premises. Postcodes.io only provides postcode-level geographic and administrative data, so its `getAddressesByPostcode()` implementation returns a single `Address` object for the postcode rather than a list of premises.
 
@@ -68,6 +67,14 @@ $validated = \JordJD\Postcodes\Utils\Validator::validatePostcode('ST163DP');
 
 Please note that the postcode validation is case insensitive.
 
+You can also normalize user input to the conventional uppercase format. Invalid
+non-string or incomplete input returns `null`.
+
+```php
+$postcode = \JordJD\Postcodes\Utils\Validator::normalizePostcode(" sw1a\t2aa ");
+// SW1A 2AA
+```
+
 ### Generate postcode
 
 This library allows you generate a random, valid UK postcode. This makes use of the
@@ -85,3 +92,24 @@ $postcode = \JordJD\Postcodes\Utils\Generator::generatePostcode();
 $outwardCode = \JordJD\Postcodes\Utils\Tokenizer::outward('ST163DP'); // Returns ST16
 $inwardCode = \JordJD\Postcodes\Utils\Tokenizer::inward('ST163DP'); // Returns 3DP
 ```
+
+## HTTP clients and errors
+
+Ideal Postcodes, Loqate and Postcodes.io use their current HTTPS JSON APIs. Each
+service accepts an optional Guzzle `ClientInterface` implementation as its
+second constructor argument, which is useful for custom timeouts, proxies,
+logging and tests.
+
+```php
+$client = new \GuzzleHttp\Client(['timeout' => 10]);
+$service = new \JordJD\Postcodes\Objects\IdealPostcodes('API_KEY', $client);
+```
+
+Invalid postcodes throw `InvalidPostcodeException` before any API request is
+made. Provider authentication, HTTP and response errors continue to throw an
+exception with a descriptive message.
+
+## Compatibility
+
+PHP 7.1 through the current PHP 8.x releases are supported. Composer selects a
+compatible maintained Guzzle and test-tool version for the PHP runtime in use.

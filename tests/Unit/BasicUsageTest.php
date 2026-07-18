@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase;
 
 final class BasicUsageTest extends TestCase
 {
-    public function validationProvider()
+    public static function validationProvider()
     {
         return [
             ['ST163DP'],
@@ -27,12 +27,13 @@ final class BasicUsageTest extends TestCase
     /**
      * @dataProvider validationProvider
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('validationProvider')]
     public function testValidation($postcode)
     {
         $this->assertTrue(Validator::validatePostcode($postcode));
     }
 
-    public function validationFailureProvider()
+    public static function validationFailureProvider()
     {
         return [
             ['ST163DPA'],
@@ -43,12 +44,16 @@ final class BasicUsageTest extends TestCase
             ['KT18 5DN'],
             ['AB15 4YR'],
             ['B62 8RS'],
+            [null],
+            [12345],
+            [[]],
         ];
     }
 
     /**
      * @dataProvider validationFailureProvider
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('validationFailureProvider')]
     public function testValidationFailure($postcode)
     {
         $this->assertFalse(Validator::validatePostcode($postcode));
@@ -67,7 +72,7 @@ final class BasicUsageTest extends TestCase
         }
     }
 
-    public function outwardAndInwardCodesProvider()
+    public static function outwardAndInwardCodesProvider()
     {
         return [
             [
@@ -121,6 +126,7 @@ final class BasicUsageTest extends TestCase
     /**
      * @dataProvider outwardAndInwardCodesProvider
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('outwardAndInwardCodesProvider')]
     public function testOutwardAndInwardCodes($postcode, $outward, $inward)
     {
         $this->assertEquals($outward, Tokenizer::outward($postcode));
@@ -141,5 +147,11 @@ final class BasicUsageTest extends TestCase
         $this->expectExceptionMessage('Post code provided is not valid');
 
         Tokenizer::inward('ST163DPA');
+    }
+
+    public function testPostcodeNormalization()
+    {
+        $this->assertSame('SW1A 2AA', Validator::normalizePostcode("  sw1a\t2aa\n"));
+        $this->assertNull(Validator::normalizePostcode(null));
     }
 }
