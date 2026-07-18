@@ -30,6 +30,8 @@ It currently supports the following postcode lookup services.
 * Postcode Anywhere (PCA Predict) - https://www.pcapredict.com/
 * Postcodes.io - http://postcodes.io/
 
+Ideal Postcodes and Postcode Anywhere can return individual premises. Postcodes.io only provides postcode-level geographic and administrative data, so its `getAddressesByPostcode()` implementation returns a single `Address` object for the postcode rather than a list of premises.
+
 Sign up at the respective website if you need to use these features.
 
 You can then use the following code to get an appropriate postcode lookup service object.
@@ -48,6 +50,8 @@ $postcodeLookupService = new \JordJD\Postcodes\Objects\PostcodesIo();
 
 To retrieve the addresses associated with a UK postcode, just pass it to the method shown below. 
 You will receive an array of address objects, appropriately split by their address lines and other details.
+
+The number and detail of results depend on the lookup service. In particular, Postcodes.io always returns one postcode-level result; use a premises-capable provider when you need every deliverable address.
 
 ```php
 $addresses = $postcodeLookupService->getAddressesByPostcode('ST163DP');
